@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class='titles'>Your Program</h1>
+  <div class="list_group">
+    <div class="row">
+    {% for item in object_list %}
+    <div class="col-5 listItem">
+      <a class='list-ex-item' href="{% url 'Exercises:single' slug=item.exercise.slug %}">
+        <h3 class='title'>{{item.exercise.name}}</h3>
+      </a>
+      <p>Difficulty: {{item.exercise.difficulty}}, Category: {{item.exercise.category}}</p>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+{% endblock %}

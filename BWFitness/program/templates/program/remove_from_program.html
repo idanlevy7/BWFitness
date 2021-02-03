@@ -1,0 +1,9 @@
+{% extends "base.html"%}
+{% block content%}
+<br>
+  <p>Removed exercise from program</p>
+  <a class="btn btn-primary" href="{% url 'Exercises:all'%}">All Exercises</a>
+  <a class="btn btn-primary" href="{% url 'program:my_program'%}">Program</a>
+  <br>
+  <a class="btn btn-primary" href="{% url 'Exercises:single' slug=slug %}">Back To Exercise</a>
+{% endblock %}

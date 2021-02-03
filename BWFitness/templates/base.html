@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BWFitness</title>
+    <!-- Bootstrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- FONT -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+      <link rel="stylesheet" href="{% static 'BWFitness/css/master.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class='navbar-brand' href="{% url 'home' %}">FBFitness</a>
+        <a class="nav-link" href="{% url 'Exercises:all' %}">Exercises</a>
+        <a class="nav-link" href="{% url 'program:my_program' %}">Program</a>
+      </div>
+    </nav>
+    <div class="container mycontent">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

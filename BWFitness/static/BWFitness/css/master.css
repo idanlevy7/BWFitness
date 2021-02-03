@@ -1,0 +1,28 @@
+body{
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+}
+
+.listItem{
+  border: 5px solid black;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.list_group{
+  text-align: center;
+}
+.row{
+  text-align: center;
+}
+.titles{
+  color: rgb(0,120,240);
+  font-size: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

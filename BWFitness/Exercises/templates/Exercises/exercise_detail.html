@@ -1,0 +1,27 @@
+{% extends 'Exercises/exercise_base.html' %}
+{% block ex_content %}
+<h1 class='titles'>{{exercise.name}}</h1>
+<div class="content">
+  <p>{{exercise.description}}</p>
+  <p>Category: {{exercise.category}}</p>
+  {% if exercise.category != 'Legs' %}
+    <p>Plane: {{exercise.plane}}</p>
+  {% endif %}
+  <a class="btn btn-primary" href="{{exercise.link}}" target="_blank">Video demonstration</a>
+  {% if exercise.difficulty < 7 %}
+  <br>
+    <a class="btn btn-primary" href="{% url 'Exercises:single' slug=exercise.progressionTo.slug %}">Harder Progression</a>
+  {% endif %}
+  {% if exercise.difficulty > 1 %}
+  <br>
+    <a class="btn btn-primary" href="{% url 'Exercises:single' slug=exercise.progressionFrom.slug %}">Easier Progression</a>
+  {% endif %}
+  {% if exercise.name in ex_list %}
+    <br>
+    <a class="btn btn-danger" href="{% url 'program:remove' slug=exercise.slug %}">Remove From Program</a>
+  {% else %}
+    <br>
+    <a class="btn btn-success" href="{% url 'program:add' slug=exercise.slug %}">Add To Program</a>
+  {% endif %}
+</div>
+{% endblock %}
